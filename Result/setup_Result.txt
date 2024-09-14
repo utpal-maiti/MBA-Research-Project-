@@ -1,0 +1,293 @@
+PS C:\Users\Student\Downloads\mslearn-ai-document-intelligence\Labfiles\03-composed-model> .\setup.ps1
+Setting up the DocumentIntelligenceResources7db2 resource group.
+{
+  "id": "/subscriptions/673e85f3-f2ed-47af-bb97-83493993f2a8/resourceGroups/DocumentIntelligenceResources7db2",
+  "location": "westus2",
+  "managedBy": null,
+  "name": "DocumentIntelligenceResources7db2",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+Setting up the docintelstorage7db2 storage account.
+The public access to all blobs or containers in the storage account will be disallowed by default in the future, which means default value for --allow-blob-public-access is still null but will be equivalent to false.
+Resource provider 'Microsoft.Storage' used by this operation is not registered. We are registering for you.
+Registration succeeded.
+{
+  "accessTier": "Hot",
+  "allowBlobPublicAccess": true,
+  "allowCrossTenantReplication": false,
+  "allowSharedKeyAccess": null,
+  "allowedCopyScope": null,
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2024-08-25T12:07:24.401519+00:00",
+  "customDomain": null,
+  "defaultToOAuthAuthentication": null,
+  "dnsEndpointType": null,
+  "enableHttpsTrafficOnly": true,
+  "enableNfsV3": null,
+  "encryption": {
+    "encryptionIdentity": null,
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2024-08-25T12:07:24.620174+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2024-08-25T12:07:24.620174+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "extendedLocation": null,
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/673e85f3-f2ed-47af-bb97-83493993f2a8/resourceGroups/DocumentIntelligenceResources7db2/providers/Microsoft.Storage/storageAccounts/docintelstorage7db2",
+  "identity": null,
+  "immutableStorageWithVersioning": null,
+  "isHnsEnabled": null,
+  "isLocalUserEnabled": null,
+  "isSftpEnabled": null,
+  "keyCreationTime": {
+    "key1": "2024-08-25T12:07:24.526365+00:00",
+    "key2": "2024-08-25T12:07:24.526365+00:00"
+  },
+  "keyPolicy": null,
+  "kind": "StorageV2",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "westus2",
+  "minimumTlsVersion": "TLS1_0",
+  "name": "docintelstorage7db2",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "resourceAccessRules": null,
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://docintelstorage7db2.blob.core.windows.net/",
+    "dfs": "https://docintelstorage7db2.dfs.core.windows.net/",
+    "file": "https://docintelstorage7db2.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://docintelstorage7db2.queue.core.windows.net/",
+    "table": "https://docintelstorage7db2.table.core.windows.net/",
+    "web": "https://docintelstorage7db2.z5.web.core.windows.net/"
+  },
+  "primaryLocation": "westus2",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": null,
+  "resourceGroup": "DocumentIntelligenceResources7db2",
+  "routingPreference": null,
+  "sasPolicy": null,
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "storageAccountSkuConversionStatus": null,
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+Creating containers for the sample forms.
+{
+  "created": true
+}
+{
+  "created": true
+}
+{
+  "created": true
+}
+Uploading the sample forms to the storage account.
+Finished[#############################################################]  100.0000%
+[
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_1.pdf",
+    "Last Modified": "2024-08-25T12:08:14+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE98DE3350\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_2.pdf",
+    "Last Modified": "2024-08-25T12:08:14+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE992525B2\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_3.pdf",
+    "Last Modified": "2024-08-25T12:08:15+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9951820A\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_4.pdf",
+    "Last Modified": "2024-08-25T12:08:15+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE997C8064\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_5.pdf",
+    "Last Modified": "2024-08-25T12:08:15+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE99A86811\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1040examples/f1040_6.pdf",
+    "Last Modified": "2024-08-25T12:08:16+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE99E3A7DE\""
+  }
+]
+Finished[#############################################################]  100.0000%
+[
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1099examples/f1099msc_payer.pdf",
+    "Last Modified": "2024-08-25T12:08:20+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9C605AA1\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1099examples/f1099msc_payer_2.pdf",
+    "Last Modified": "2024-08-25T12:08:20+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9C95FB65\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1099examples/f1099msc_recipient.pdf",
+    "Last Modified": "2024-08-25T12:08:20+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9CB37465\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1099examples/f1099msc_recipient_2.pdf",
+    "Last Modified": "2024-08-25T12:08:21+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9CD09F8C\""
+  },
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/1099examples/f1099msc_state.pdf",
+    "Last Modified": "2024-08-25T12:08:21+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FE9CF342D9\""
+  }
+]
+Finished[#############################################################]  100.0000%
+[
+  {
+    "Blob": "https://docintelstorage7db2.blob.core.windows.net/testdoc/f1040_7.pdf",
+    "Last Modified": "2024-08-25T12:08:26+00:00",
+    "Type": "application/pdf",
+    "eTag": "\"0x8DCC4FEA02497D8\""
+  }
+]
+Uploaded sample data.
+Setting up the Document Intelligence resource.
+Resource provider 'Microsoft.CognitiveServices' used by this operation is not registered. We are registering for you.
+Registration succeeded.
+{
+  "etag": "\"2701f915-0000-0800-0000-66cb1f290000\"",
+  "id": "/subscriptions/673e85f3-f2ed-47af-bb97-83493993f2a8/resourceGroups/DocumentIntelligenceResources7db2/providers/Microsoft.CognitiveServices/accounts/DocumentIntelligence7db2",
+  "identity": null,
+  "kind": "FormRecognizer",
+  "location": "westus2",
+  "name": "DocumentIntelligence7db2",
+  "properties": {
+    "abusePenalty": null,
+    "allowedFqdnList": null,
+    "apiProperties": null,
+    "callRateLimit": {
+      "count": null,
+      "renewalPeriod": null,
+      "rules": [
+        {
+          "count": 30.0,
+          "dynamicThrottlingEnabled": null,
+          "key": "default",
+          "matchPatterns": [
+            {
+              "method": "*",
+              "path": "*"
+            }
+          ],
+          "minCount": null,
+          "renewalPeriod": 60.0
+        }
+      ]
+    },
+    "capabilities": [
+      {
+        "name": "VirtualNetworks",
+        "value": null
+      },
+      {
+        "name": "CustomerManagedKey",
+        "value": null
+      },
+      {
+        "name": "Container",
+        "value": "FormRecognizer.Forms,FormRecognizer.FormRecognizerCustomSupervised,FormRecognizer.FormRecognizerLayout,FormRecognizer.formrecognizerreadlayout,FormRecognizer.FormRecognizerId,FormRecognizer.FormRecognizerInvoice,FormRecognizer.FormRecognizerReceipt,FormRecognizer.FormRecognizerBusinessCard,FormRecognizer.FormRecognizerRead,FormRecognizer.FormRecognizerKvp"
+      }
+    ],
+    "commitmentPlanAssociations": null,
+    "customSubDomainName": null,
+    "dateCreated": "2024-08-25T12:09:45.0938903Z",
+    "deletionDate": null,
+    "disableLocalAuth": null,
+    "dynamicThrottlingEnabled": null,
+    "encryption": null,
+    "endpoint": "https://westus2.api.cognitive.microsoft.com/",
+    "endpoints": {
+      "Container": "https://westus2.api.cognitive.microsoft.com/",
+      "FormRecognizer": "https://westus2.api.cognitive.microsoft.com/"
+    },
+    "internalId": "2d8379cb73694232a27cd009c7446bb5",
+    "isMigrated": false,
+    "locations": null,
+    "migrationToken": null,
+    "networkAcls": null,
+    "privateEndpointConnections": [],
+    "provisioningState": "Succeeded",
+    "publicNetworkAccess": "Enabled",
+    "quotaLimit": null,
+    "restore": null,
+    "restrictOutboundNetworkAccess": null,
+    "scheduledPurgeDate": null,
+    "skuChangeInfo": null,
+    "userOwnedStorage": null
+  },
+  "resourceGroup": "DocumentIntelligenceResources7db2",
+  "sku": {
+    "capacity": null,
+    "family": null,
+    "name": "F0",
+    "size": null,
+    "tier": null
+  },
+  "systemData": {
+    "createdAt": "2024-08-25T12:09:44.441922+00:00",
+    "createdBy": "User1-43399207@LODSPRODMCA.onmicrosoft.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2024-08-25T12:09:44.441922+00:00",
+    "lastModifiedBy": "User1-43399207@LODSPRODMCA.onmicrosoft.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": null,
+  "type": "Microsoft.CognitiveServices/accounts"
+}
